@@ -1,4 +1,9 @@
 import os
+import sys
+
+sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__)), os.pardir))
+sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__)), os.pardir, os.pardir))
+
 import Utils
 from Claim import Claim
 

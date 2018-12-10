@@ -11,13 +11,13 @@ class Claim:
         self.height = height
 
     def calculateConflicts(self, other: Claim) -> [Tuple[int, int]]:
-        if other.left + other.width < self.left:
+        if other.left + other.width <= self.left:
             return []
-        if other.left > self.left + self.width:
+        if other.left >= self.left + self.width:
             return []
-        if other.top + other.height < self.top:
+        if other.top + other.height <= self.top:
             return []
-        if other.top > self.top + self.height:
+        if other.top >= self.top + self.height:
             return []
         
         if self.left < other.left:
@@ -26,9 +26,9 @@ class Claim:
             minX = self.left + 1
         
         if self.left + self.width < other.left + other.width:
-            maxX = self.left + self.width + 1
+            maxX = self.left + self.width
         else:
-            maxX = other.left + other.width + 1
+            maxX = other.left + other.width
 
         if self.top < other.top:
             minY = other.top + 1
@@ -36,9 +36,9 @@ class Claim:
             minY = self.top + 1
         
         if self.top + self.height < other.top + other.height:
-            maxY = self.top + self.height + 1
+            maxY = self.top + self.height
         else:
-            maxY = other.top + other.height + 1
+            maxY = other.top + other.height
         
         conflicts = []
         for i in range(minX, maxX + 1):

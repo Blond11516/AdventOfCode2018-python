@@ -1,6 +1,10 @@
 import os
-import Utils
 import sys
+
+sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__)), os.pardir, os.pardir))
+
+import Utils
+
 
 filePath = os.path.join(os.path.abspath(os.path.dirname(__file__)), os.pardir, 'input.txt')
 inputs = Utils.readInputs(os.path.join(os.pardir, filePath))

@@ -1,12 +1,12 @@
 import os
-import Utils
-from Claim import Claim
 import sys
 
-"""claim1 = Claim(1, 10, 20, 10, 10)
-claim2 = Claim(2, 20, 10, 10, 10)
+sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__)), os.pardir))
+sys.path.append(os.path.join(os.path.abspath(os.path.dirname(__file__)), os.pardir, os.pardir))
 
-print(len(claim1.calculateConflicts(claim2)))"""
+import Utils
+from Claim import Claim
+
 
 filePath = os.path.join(os.path.abspath(os.path.dirname(__file__)), os.pardir, 'input.txt')
 inputs = Utils.readInputs(filePath, Claim.parse)
